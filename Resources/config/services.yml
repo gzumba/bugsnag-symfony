@@ -45,3 +45,12 @@ services:
         class: '%bugsnag.shutdown%'
         tags:
           - { name: "kernel.event_subscriber" }
+
+    bugsnag.callbacks.user_setting:
+        class: Bugsnag\BugsnagBundle\Callbacks\UserSettingCallback
+        arguments:
+            - '@?security.token_storage'
+            - '@?security.authorization_checker'
+            - '%bugsnag.user%'
+        tags:
+            - { name: 'bugsnag.callback' }

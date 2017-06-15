@@ -17,7 +17,7 @@ class BugsnagBundle extends Bundle
 
 
     /**
-     * {@inheritdoc}
+     * Setup the callback registering pass.
      *
      * @param \Symfony\Component\DependencyInjection\ContainerBuilder $container
      *
